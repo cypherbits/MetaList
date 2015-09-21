@@ -15,7 +15,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <Label layoutX="223.0" layoutY="267.0" text="%about.powered" textAlignment="CENTER" textFill="#c9c9c9">
+      <Label layoutX="244.0" layoutY="267.0" text="%about.powered" textAlignment="CENTER" textFill="#c9c9c9">
          <font>
             <Font size="14.0" />
          </font>

@@ -9,27 +9,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metadatacollector.MainController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metadatacollector.MainController">
    <children>
       <MenuBar maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="29.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="%main.menu.files">
             <items>
-                  <MenuItem fx:id="btnScanDir" mnemonicParsing="false" onAction="#handleButtonAction" text="Select directory" />
-                  <MenuItem fx:id="btnScanFiles" mnemonicParsing="false" onAction="#handleButtonAction" text="Select files" />
+                  <MenuItem fx:id="btnScanDir" mnemonicParsing="false" onAction="#handleButtonAction" text="%main.menu.files.selectdir" />
+                  <MenuItem fx:id="btnScanFiles" mnemonicParsing="false" onAction="#handleButtonAction" text="%main.menu.files.selectfiles" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem fx:id="btnClose" mnemonicParsing="false" onAction="#handleButtonAction" text="Close" />
+              <MenuItem fx:id="btnClose" mnemonicParsing="false" onAction="#handleButtonAction" text="%main.menu.files.exit" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Metadata">
+            <Menu mnemonicParsing="false" text="%main.menu.metadata">
               <items>
-                <MenuItem fx:id="menu_metadata_itemRemoveSelected" disable="true" mnemonicParsing="false" onAction="#handleFilesContextMenuAction" text="Remove metadata from selected file" />
-                  <MenuItem fx:id="menu_metadata_itemRemoveAll" disable="true" mnemonicParsing="false" onAction="#handleFilesContextMenuAction" text="Remove metadata from all files" />
+                <MenuItem fx:id="menu_metadata_itemRemoveSelected" disable="true" mnemonicParsing="false" onAction="#handleFilesContextMenuAction" text="%main.menu.metadata.removeselected" />
+                  <MenuItem fx:id="menu_metadata_itemRemoveAll" disable="true" mnemonicParsing="false" onAction="#handleFilesContextMenuAction" text="%main.menu.metadata.removeall" />
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="%main.menu.help">
             <items>
-              <MenuItem fx:id="btnAbout" mnemonicParsing="false" onAction="#handleButtonAction" text="About" />
+              <MenuItem fx:id="btnAbout" mnemonicParsing="false" onAction="#handleButtonAction" text="%main.menu.help.about" />
             </items>
           </Menu>
         </menus>
@@ -48,7 +48,7 @@
                         </ContextMenu>
                      </contextMenu></ListView>
                   <ProgressIndicator fx:id="progress_files" cacheHint="SPEED" layoutX="112.0" layoutY="293.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <TextField fx:id="txtSearchFiles" disable="true" layoutY="1.0" prefHeight="30.0" prefWidth="284.0" promptText="Search files" styleClass="search" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="txtSearchFiles" disable="true" layoutY="1.0" prefHeight="30.0" prefWidth="284.0" promptText="%main.searchFiles" styleClass="search" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -61,7 +61,7 @@
                           </items>
                         </ContextMenu>
                      </contextMenu></TableView>
-                  <TextField fx:id="txtSearchMetadata" disable="true" layoutY="2.0" prefHeight="30.0" promptText="Search Metadata" styleClass="search" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="txtSearchMetadata" disable="true" layoutY="2.0" prefHeight="30.0" promptText="%main.searchMetadata" styleClass="search" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         </items>

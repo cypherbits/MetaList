@@ -32,7 +32,6 @@ public class AboutController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         
         labelVersion.setText(MetadataCollector.appversion);
     }

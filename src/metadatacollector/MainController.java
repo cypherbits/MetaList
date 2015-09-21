@@ -83,6 +83,8 @@ public class MainController implements Initializable {
     private ObservableList<String> files;
 
     private ObservableList<Metadata> data;
+    
+    private ResourceBundle rb;
 
     /*Functions*/
     @FXML
@@ -92,9 +94,9 @@ public class MainController implements Initializable {
         if (source == this.btnAbout) {
             try {
                 Parent root;
-                root = FXMLLoader.load(getClass().getResource("About.fxml"), ResourceBundle.getBundle("resources.locale", new Locale("en")));
+                root = FXMLLoader.load(getClass().getResource("About.fxml"), ResourceBundle.getBundle("resources.locale", new Locale(MetadataCollector.LOCALE)));
                 Stage stage = new Stage();
-                stage.setTitle("About");
+                stage.setTitle(rb.getString("about.title"));
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
                 stage.show();
@@ -107,7 +109,7 @@ public class MainController implements Initializable {
         } else if (source == this.btnScanDir) {
             DirectoryChooser directoryChooser = new DirectoryChooser();
 
-            directoryChooser.setTitle("Select directory");
+            directoryChooser.setTitle(rb.getString("main.selectDirectory"));
 
             File selectedDirectory
                     = directoryChooser.showDialog((Stage) root.getScene().getWindow());
@@ -153,7 +155,7 @@ public class MainController implements Initializable {
 
         } else if (source == this.btnScanFiles) {
             FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Select files");
+            fileChooser.setTitle(rb.getString("main.selectFiles"));
             fileChooser.getExtensionFilters().addAll(
                     new ExtensionFilter("All Files", "*.*"),
                     new ExtensionFilter("Document Files", "*.txt", "*.doc", "*.pdf", "*.docx", ".odt"),
@@ -218,7 +220,7 @@ public class MainController implements Initializable {
             thread.start();
 
         } else if (source == this.contextMenu_files_itemRemoveAll || source == this.menu_metadata_itemRemoveAll) {
-            Alert alert = new Alert(AlertType.CONFIRMATION, "Are you sure you want to delete metadata from all this files?");
+            Alert alert = new Alert(AlertType.CONFIRMATION, rb.getString("main.removeAllMetadata"));
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 Thread thread = new Thread(new Runnable() {
@@ -240,11 +242,13 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        this.rb = rb;
 
         tableView_Metadata.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         TableColumn colName = new TableColumn("Metadata");
-        TableColumn colValue = new TableColumn("Value");
+        TableColumn colValue = new TableColumn(rb.getString("main.value"));
 
         colName.setCellValueFactory(
                 new PropertyValueFactory<Metadata, String>("name")
@@ -368,7 +372,7 @@ public class MainController implements Initializable {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Error: some core files not found or cannot execute!");
+            alert.setContentText(rb.getString("error.coreFiles"));
 
             alert.showAndWait();
 
