@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -27,7 +28,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -92,7 +92,7 @@ public class MainController implements Initializable {
         if (source == this.btnAbout) {
             try {
                 Parent root;
-                root = FXMLLoader.load(getClass().getResource("About.fxml"));
+                root = FXMLLoader.load(getClass().getResource("About.fxml"), ResourceBundle.getBundle("resources.locale", new Locale("en")));
                 Stage stage = new Stage();
                 stage.setTitle("About");
                 stage.setScene(new Scene(root));
