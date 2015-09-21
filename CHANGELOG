@@ -1,0 +1,17 @@
+1.0 final 26/08/2015
+-Exiftool updated to version 10, production release.
+
+Beta 4: 23/07/2015
+-Exiftool updated to version 9.99 (July 23, 2015)
+-You can now delete metadata.
+
+27/05/2015
+-Bugfixes: opening selecting files the first time now works.
+-Exiftool updated to version 9.96 (May 20, 2015)
+
+17/05/2015
+-Implemented opening multiple files instead of directory.
+-Bug fixes, minor visual changes.
+
+16/05/2015
+-Initial release
