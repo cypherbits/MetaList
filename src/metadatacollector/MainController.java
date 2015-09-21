@@ -27,9 +27,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -187,6 +190,12 @@ public class MainController implements Initializable {
 
         if (source == this.metadata_contextMenu_btnCopy) {
 
+            Metadata selected = (Metadata) tableView_Metadata.getSelectionModel().getSelectedItem();
+
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(selected.getValue());
+            clipboard.setContent(content);
         }
     }
 
@@ -313,6 +322,18 @@ public class MainController implements Initializable {
             }
         });
 
+        //TableViewMetadata on row selected enable copy context menu
+        tableView_Metadata.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Metadata>() {
+            @Override
+            public void changed(ObservableValue<? extends Metadata> observable, Metadata oldValue, Metadata newValue) {
+                if (newValue != null) {
+                    metadata_contextMenu_btnCopy.setDisable(false);
+                } else {
+                    metadata_contextMenu_btnCopy.setDisable(true);
+                }
+            }
+        });
+
         //search files
         txtSearchFiles.textProperty().addListener(new ChangeListener() {
             public void changed(ObservableValue observable, Object oldVal,
@@ -331,7 +352,7 @@ public class MainController implements Initializable {
             }
         });
 
-       checkFiles();
+        checkFiles();
 
     } //end init func
 

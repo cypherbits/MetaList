@@ -57,7 +57,7 @@
                      <contextMenu>
                         <ContextMenu>
                           <items>
-                            <MenuItem fx:id="metadata_contextMenu_btnCopy" disable="true" mnemonicParsing="false" onAction="#handleMetadataContextMenu" text="Copy" />
+                            <MenuItem fx:id="metadata_contextMenu_btnCopy" disable="true" mnemonicParsing="false" onAction="#handleMetadataContextMenu" text="Copy value" />
                           </items>
                         </ContextMenu>
                      </contextMenu></TableView>
