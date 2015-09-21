@@ -1,2 +1,5 @@
 /exiftool/
 /nbproject/
+/nbbuild.xml
+/manifest.mf
+/build.xml
