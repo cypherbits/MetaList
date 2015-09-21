@@ -180,15 +180,14 @@ public class MainController implements Initializable {
             }
         }
     }
-    
-    
+
     @FXML
-    private void handleMetadataContextMenu(ActionEvent event){
-         Object source = event.getSource();
-         
-         if (source == this.metadata_contextMenu_btnCopy){
-             
-         }
+    private void handleMetadataContextMenu(ActionEvent event) {
+        Object source = event.getSource();
+
+        if (source == this.metadata_contextMenu_btnCopy) {
+
+        }
     }
 
     @FXML
@@ -332,7 +331,31 @@ public class MainController implements Initializable {
             }
         });
 
+       // checkFiles();
+
     } //end init func
+
+    public void checkFiles() {
+        File jsonJar = new File("lib/json-20141113.jar");
+        File exiftoolExec = new File("exiftool/exiftool");
+        File exiftoolExecWin = new File("exiftool/exiftool.exe");
+        if (jsonJar.exists() && exiftoolExec.exists() && exiftoolExecWin.exists()) {
+            if (!exiftoolExec.canExecute()) {
+                exiftoolExec.setExecutable(true);
+            }
+        } else {
+
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: some core files not found or cannot execute!");
+
+            alert.showAndWait();
+
+            System.err.println("ERROR: some core files doesn't exists or doesn'ts have execution privileges.");
+            System.exit(-1);
+        }
+    }
 
     private void searchInFiles(String oldVal, String newVal) {
         if (oldVal != null && (newVal.length() < oldVal.length())) {
