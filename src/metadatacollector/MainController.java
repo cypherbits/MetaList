@@ -331,15 +331,14 @@ public class MainController implements Initializable {
             }
         });
 
-       // checkFiles();
+       checkFiles();
 
     } //end init func
 
     public void checkFiles() {
-        File jsonJar = new File("lib/json-20141113.jar");
         File exiftoolExec = new File("exiftool/exiftool");
         File exiftoolExecWin = new File("exiftool/exiftool.exe");
-        if (jsonJar.exists() && exiftoolExec.exists() && exiftoolExecWin.exists()) {
+        if (exiftoolExec.exists() && exiftoolExecWin.exists()) {
             if (!exiftoolExec.canExecute()) {
                 exiftoolExec.setExecutable(true);
             }
