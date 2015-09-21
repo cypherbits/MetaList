@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  */
 public class MetadataCollector extends Application {
     
-    public static final String appversion= "v1.0 (26/08/2015)";
+    public static final String appversion= "v1.1 (x/09/2015)";
     
     @Override
     public void start(Stage stage) throws Exception {
