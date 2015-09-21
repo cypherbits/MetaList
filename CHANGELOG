@@ -1,17 +1,22 @@
-1.0 final 26/08/2015
+v1.1 21/09/2015
+- New: Internationalization: Spanish translation. The app now detects the current system locale.
+- Test if exists core files (exiftool) on start.
+- New: copy metadata value context menu.
+
+v1.0 final 26/08/2015
 -Exiftool updated to version 10, production release.
 
-Beta 4: 23/07/2015
+v1.0 Beta 4: 23/07/2015
 -Exiftool updated to version 9.99 (July 23, 2015)
 -You can now delete metadata.
 
-27/05/2015
+v1.0 Beta 3: 27/05/2015
 -Bugfixes: opening selecting files the first time now works.
 -Exiftool updated to version 9.96 (May 20, 2015)
 
-17/05/2015
+v1.0 Beta 2: 17/05/2015
 -Implemented opening multiple files instead of directory.
 -Bug fixes, minor visual changes.
 
-16/05/2015
+v1.0 Beta 1: 16/05/2015
 -Initial release
