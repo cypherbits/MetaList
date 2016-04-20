@@ -1,3 +1,10 @@
+v2.0 Beta 1 20/04/2016
+
+
+
+v1.1.1 x/02/2016
+-Update exiftool to production version 10.10
+
 v1.1 21/09/2015
 - New: Internationalization: Spanish translation. The app now detects the current system locale.
 - Test if exists core files (exiftool) on start.
