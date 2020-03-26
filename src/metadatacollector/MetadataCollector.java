@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  */
 public class MetadataCollector extends Application {
 
-    public static final String appversion = "v1.1.2 (22/10/2016)";
+    public static final String appversion = "v1.1.3 (26/03/2020)";
 
     public static String LOCALE;
 
