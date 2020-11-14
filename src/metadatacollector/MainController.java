@@ -376,7 +376,7 @@ public class MainController implements Initializable {
 
             alert.showAndWait();
 
-            System.err.println("ERROR: some core files doesn't exists or doesn'ts have execution privileges.");
+            System.err.println("ERROR: some core files do not exist or do not have execution privileges.");
             System.exit(-1);
         }
     }

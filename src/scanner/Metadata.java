@@ -22,8 +22,5 @@ public class Metadata {
     public String getValue() {
         return value;
     }
- 
-    
-    
-        
+
 }
